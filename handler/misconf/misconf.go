@@ -10,25 +10,25 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/khulnasoft/defsec/pkg/scanners/rbac"
+	"github.com/khulnasoft-lab/defsec/pkg/scanners/rbac"
 
 	"github.com/liamg/memoryfs"
 	"github.com/samber/lo"
 	"golang.org/x/xerrors"
 
+	"github.com/khulnasoft-lab/defsec/pkg/detection"
+	"github.com/khulnasoft-lab/defsec/pkg/scan"
+	"github.com/khulnasoft-lab/defsec/pkg/scanners"
+	cfscanner "github.com/khulnasoft-lab/defsec/pkg/scanners/cloudformation"
+	dfscanner "github.com/khulnasoft-lab/defsec/pkg/scanners/dockerfile"
+	"github.com/khulnasoft-lab/defsec/pkg/scanners/helm"
+	k8sscanner "github.com/khulnasoft-lab/defsec/pkg/scanners/kubernetes"
+	"github.com/khulnasoft-lab/defsec/pkg/scanners/options"
+	tfscanner "github.com/khulnasoft-lab/defsec/pkg/scanners/terraform"
 	"github.com/khulnasoft-lab/fanal/analyzer"
 	"github.com/khulnasoft-lab/fanal/artifact"
 	"github.com/khulnasoft-lab/fanal/handler"
 	"github.com/khulnasoft-lab/fanal/types"
-	"github.com/khulnasoft/defsec/pkg/detection"
-	"github.com/khulnasoft/defsec/pkg/scan"
-	"github.com/khulnasoft/defsec/pkg/scanners"
-	cfscanner "github.com/khulnasoft/defsec/pkg/scanners/cloudformation"
-	dfscanner "github.com/khulnasoft/defsec/pkg/scanners/dockerfile"
-	"github.com/khulnasoft/defsec/pkg/scanners/helm"
-	k8sscanner "github.com/khulnasoft/defsec/pkg/scanners/kubernetes"
-	"github.com/khulnasoft/defsec/pkg/scanners/options"
-	tfscanner "github.com/khulnasoft/defsec/pkg/scanners/terraform"
 )
 
 func init() {
