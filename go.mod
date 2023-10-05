@@ -12,31 +12,29 @@ require (
 	github.com/alicebob/miniredis/v2 v2.21.0
 	github.com/aws/aws-sdk-go v1.44.25
 	github.com/containerd/containerd v1.6.4 // replace
-	github.com/containerd/nerdctl v0.20.0
-	github.com/docker/docker v24.0.6+incompatible // replace
+	github.com/docker/docker v20.10.3+incompatible // replace
 	github.com/docker/go-connections v0.4.0
 	github.com/go-git/go-git/v5 v5.4.2
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/golang-jwt/jwt v3.2.2+incompatible
-	github.com/google/go-containerregistry v0.7.1-0.20211214010025-a65b7844a475
+	github.com/google/go-containerregistry v0.5.1
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1
-	github.com/khulnasoft-lab/defsec v0.0.5
 	github.com/knqyf263/go-apk-version v0.0.0-20200609155635-041fdbb8563f
 	github.com/knqyf263/go-deb-version v0.0.0-20190517075300-09fca494f03d
 	github.com/knqyf263/go-rpmdb v0.0.0-20220607073645-842f01763e21
 	github.com/knqyf263/nested v0.0.1
 	github.com/kylelemons/godebug v1.1.0
 	github.com/liamg/memoryfs v1.4.2
-	github.com/moby/buildkit v0.10.3
-	github.com/open-policy-agent/opa v0.41.0 // indirect
+	github.com/moby/buildkit v0.8.3
+	github.com/open-policy-agent/opa v0.39.0 // indirect
 	github.com/opencontainers/go-digest v1.0.0
 	github.com/opencontainers/image-spec v1.0.3-0.20220303224323-02efb9a75ee1
 	github.com/samber/lo v1.21.0
 	github.com/saracen/walker v0.0.0-20191201085201-324a081bae7e
 	github.com/sosedoff/gitkit v0.3.0
 	github.com/stretchr/testify v1.7.2
-	github.com/testcontainers/testcontainers-go v0.13.0
+	github.com/testcontainers/testcontainers-go v0.9.0
 	github.com/urfave/cli/v2 v2.8.1
 	go.etcd.io/bbolt v1.3.6
 	go.uber.org/zap v1.21.0
@@ -93,7 +91,7 @@ require (
 	github.com/containerd/fifo v1.0.0 // indirect
 	github.com/containerd/go-cni v1.1.6 // indirect
 	github.com/containerd/imgcrypt v1.1.5-0.20220421044638-8ba028dca028 // indirect
-	github.com/containerd/stargz-snapshotter v0.11.4 // indirect
+	github.com/containerd/stargz-snapshotter v0.5.0 // indirect
 	github.com/containerd/stargz-snapshotter/estargz v0.11.4 // indirect
 	github.com/containerd/ttrpc v1.1.1-0.20220420014843-944ef4a40df3 // indirect
 	github.com/containerd/typeurl v1.0.3-0.20220422153119-7f6e6d160d67 // indirect
@@ -262,7 +260,7 @@ require (
 	gopkg.in/square/go-jose.v2 v2.5.1 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
-	helm.sh/helm/v3 v3.9.0 // indirect
+	helm.sh/helm/v3 v3.7.2 // indirect
 	k8s.io/api v0.24.1 // indirect
 	k8s.io/apiextensions-apiserver v0.24.0 // indirect
 	k8s.io/apimachinery v0.24.1 // indirect
@@ -284,7 +282,7 @@ require (
 	modernc.org/sqlite v1.17.3 // indirect
 	modernc.org/strutil v1.1.1 // indirect
 	modernc.org/token v1.0.0 // indirect
-	oras.land/oras-go v1.1.1 // indirect
+	oras.land/oras-go v0.4.0 // indirect
 	sigs.k8s.io/json v0.0.0-20211208200746-9f7c6b3444d2 // indirect
 	sigs.k8s.io/kustomize/api v0.11.4 // indirect
 	sigs.k8s.io/kustomize/kyaml v0.13.6 // indirect
