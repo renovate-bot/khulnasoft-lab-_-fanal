@@ -10,8 +10,6 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/khulnasoft/defsec/pkg/scanners/rbac"
-
 	"github.com/liamg/memoryfs"
 	"github.com/samber/lo"
 	"golang.org/x/xerrors"
