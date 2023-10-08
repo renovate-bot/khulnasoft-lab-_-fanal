@@ -20,10 +20,6 @@ require (
 	github.com/google/go-containerregistry v0.14.0
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1
-	github.com/knqyf263/go-apk-version v0.0.0-20200609155635-041fdbb8563f
-	github.com/knqyf263/go-deb-version v0.0.0-20190517075300-09fca494f03d
-	github.com/knqyf263/go-rpmdb v0.0.0-20220607073645-842f01763e21
-	github.com/knqyf263/nested v0.0.1
 	github.com/kylelemons/godebug v1.1.0
 	github.com/liamg/memoryfs v1.4.2
 	github.com/moby/buildkit v0.10.3
@@ -51,8 +47,12 @@ require (
 require (
 	github.com/containerd/nerdctl v1.6.0
 	github.com/khulnasoft-lab/defsec v0.0.5
+	github.com/khulnasoft-lab/go-apk-version v0.0.0-20231008114037-7c3886bc8eda
+	github.com/khulnasoft-lab/go-deb-version v0.0.0-20231008112102-b9979c743dca
 	github.com/khulnasoft-lab/go-dep-parser v1.0.2
+	github.com/khulnasoft-lab/go-rpmdb v0.0.1
 	github.com/khulnasoft-lab/goversion v1.0.1
+	github.com/khulnasoft-lab/nested v0.0.0-20231008132242-eb281525cb7d
 	github.com/khulnasoft-lab/testdocker v1.0.0
 )
 
@@ -169,7 +169,6 @@ require (
 	github.com/jmoiron/sqlx v1.3.4 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
-	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51 // indirect
 	github.com/kevinburke/ssh_config v0.0.0-20201106050909-4977a11b4351 // indirect
 	github.com/khulnasoft-lab/go-pep440-version v1.0.0 // indirect
 	github.com/klauspost/compress v1.17.0 // indirect
@@ -184,6 +183,7 @@ require (
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.19 // indirect
 	github.com/mattn/go-runewidth v0.0.9 // indirect
+	github.com/mattn/go-sqlite3 v1.14.15 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.4 // indirect
 	github.com/miekg/pkcs11 v1.1.1 // indirect
 	github.com/minio/sha256-simd v1.0.0 // indirect
@@ -224,7 +224,6 @@ require (
 	github.com/prometheus/common v0.44.0 // indirect
 	github.com/prometheus/procfs v0.11.0 // indirect
 	github.com/rcrowley/go-metrics v0.0.0-20200313005456-10cdbea86bc0 // indirect
-	github.com/remyoudompheng/bigfft v0.0.0-20200410134404-eec4a21b6bb0 // indirect
 	github.com/rubenv/sql-migrate v1.1.1 // indirect
 	github.com/russross/blackfriday v1.6.0 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
@@ -288,16 +287,6 @@ require (
 	k8s.io/kubectl v0.24.0 // indirect
 	k8s.io/utils v0.0.0-20230220204549-a5ecb0141aa5 // indirect
 	lukechampine.com/blake3 v1.1.7 // indirect
-	lukechampine.com/uint128 v1.2.0 // indirect
-	modernc.org/cc/v3 v3.36.3 // indirect
-	modernc.org/ccgo/v3 v3.16.9 // indirect
-	modernc.org/libc v1.17.1 // indirect
-	modernc.org/mathutil v1.5.0 // indirect
-	modernc.org/memory v1.2.1 // indirect
-	modernc.org/opt v0.1.3 // indirect
-	modernc.org/sqlite v1.18.1 // indirect
-	modernc.org/strutil v1.1.3 // indirect
-	modernc.org/token v1.0.0 // indirect
 	oras.land/oras-go v1.2.0 // indirect
 	sigs.k8s.io/json v0.0.0-20220713155537-f223a00ba0e2 // indirect
 	sigs.k8s.io/kustomize/api v0.11.4 // indirect

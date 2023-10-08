@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/khulnasoft-lab/fanal/types"
-	"github.com/knqyf263/nested"
+	"github.com/khulnasoft-lab/nested"
 )
 
 type Config struct {

@@ -7,7 +7,7 @@ import (
 	"os"
 	"path/filepath"
 
-	apkVersion "github.com/knqyf263/go-apk-version"
+	apkVersion "github.com/khulnasoft-lab/go-apk-version"
 
 	"github.com/khulnasoft-lab/fanal/analyzer"
 	"github.com/khulnasoft-lab/fanal/types"

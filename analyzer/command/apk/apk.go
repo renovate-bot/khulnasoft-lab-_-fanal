@@ -24,7 +24,7 @@ const (
 	analyzerVersion       = 1
 )
 
-var apkIndexArchiveURL = "https://raw.githubusercontent.com/knqyf263/apkIndex-archive/master/alpine/v%s/main/x86_64/history.json"
+var apkIndexArchiveURL = "https://raw.githubusercontent.com/khulnasoft-lab/apkIndex-archive/master/alpine/v%s/main/x86_64/history.json"
 
 func init() {
 	if builtinos.Getenv(envApkIndexArchiveURL) != "" {

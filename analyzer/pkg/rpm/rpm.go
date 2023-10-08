@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	"github.com/khulnasoft-lab/fanal/log"
-	rpmdb "github.com/knqyf263/go-rpmdb/pkg"
+	rpmdb "github.com/khulnasoft-lab/go-rpmdb/pkg"
 	"golang.org/x/xerrors"
 
 	"github.com/khulnasoft-lab/fanal/analyzer"
