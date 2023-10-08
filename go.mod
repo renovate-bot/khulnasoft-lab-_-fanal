@@ -45,7 +45,7 @@ require (
 )
 
 require (
-	github.com/containerd/nerdctl v1.6.0
+	github.com/containerd/nerdctl v1.4.0
 	github.com/khulnasoft-lab/defsec v0.0.5
 	github.com/khulnasoft-lab/go-apk-version v0.0.0-20231008114037-7c3886bc8eda
 	github.com/khulnasoft-lab/go-deb-version v0.0.0-20231008112102-b9979c743dca
@@ -70,12 +70,12 @@ require (
 	github.com/Azure/go-autorest/autorest/date v0.3.0 // indirect
 	github.com/Azure/go-autorest/logger v0.2.1 // indirect
 	github.com/Azure/go-autorest/tracing v0.6.0 // indirect
-	github.com/MakeNowJust/heredoc v0.0.0-20170808103936-bb23615498cd // indirect
+	github.com/MakeNowJust/heredoc v1.0.0 // indirect
 	github.com/Masterminds/goutils v1.1.1 // indirect
 	github.com/Masterminds/semver v1.5.0 // indirect
 	github.com/Masterminds/semver/v3 v3.2.1 // indirect
-	github.com/Masterminds/sprig/v3 v3.2.2 // indirect
-	github.com/Masterminds/squirrel v1.5.2 // indirect
+	github.com/Masterminds/sprig/v3 v3.2.3 // indirect
+	github.com/Masterminds/squirrel v1.5.3 // indirect
 	github.com/Microsoft/go-winio v0.6.1 // indirect
 	github.com/Microsoft/hcsshim v0.11.0 // indirect
 	github.com/OneOfOne/xxhash v1.2.8 // indirect
@@ -88,13 +88,12 @@ require (
 	github.com/apparentlymart/go-cidr v1.1.0 // indirect
 	github.com/apparentlymart/go-textseg/v13 v13.0.0 // indirect
 	github.com/asaskevich/govalidator v0.0.0-20200428143746-21a406dcc535 // indirect
-	github.com/awslabs/soci-snapshotter v0.4.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/bgentry/go-netrc v0.0.0-20140422174119-9fd32a8b3d3d // indirect
 	github.com/bmatcuk/doublestar v1.3.4 // indirect
 	github.com/cenkalti/backoff v2.2.1+incompatible // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
-	github.com/chai2010/gettext-go v0.0.0-20160711120539-c6fed771bfd5 // indirect
+	github.com/chai2010/gettext-go v1.0.2 // indirect
 	github.com/containerd/cgroups v1.1.0 // indirect
 	github.com/containerd/console v1.0.3 // indirect
 	github.com/containerd/continuity v0.4.2 // indirect
@@ -122,7 +121,7 @@ require (
 	github.com/docker/go-units v0.5.0 // indirect
 	github.com/emicklei/go-restful/v3 v3.10.1 // indirect
 	github.com/emirpasic/gods v1.12.0 // indirect
-	github.com/evanphx/json-patch v4.12.0+incompatible // indirect
+	github.com/evanphx/json-patch v5.6.0+incompatible // indirect
 	github.com/exponent-io/jsonpath v0.0.0-20151013193312-d6023ce2651d // indirect
 	github.com/fatih/color v1.15.0 // indirect
 	github.com/ghodss/yaml v1.0.0 // indirect
@@ -143,6 +142,7 @@ require (
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/google/btree v1.0.1 // indirect
+	github.com/google/flatbuffers v23.5.9+incompatible // indirect
 	github.com/google/gnostic v0.5.7-v3refs // indirect
 	github.com/google/go-cmp v0.5.9 // indirect
 	github.com/google/gofuzz v1.2.0 // indirect
@@ -160,13 +160,13 @@ require (
 	github.com/hashicorp/go-uuid v1.0.3 // indirect
 	github.com/hashicorp/go-version v1.2.0 // indirect
 	github.com/hashicorp/hcl/v2 v2.12.0 // indirect
-	github.com/huandu/xstrings v1.3.2 // indirect
+	github.com/huandu/xstrings v1.3.3 // indirect
 	github.com/imdario/mergo v0.3.16 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/ipfs/go-cid v0.4.1 // indirect
 	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
-	github.com/jmoiron/sqlx v1.3.4 // indirect
+	github.com/jmoiron/sqlx v1.3.5 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/kevinburke/ssh_config v0.0.0-20201106050909-4977a11b4351 // indirect
@@ -177,7 +177,7 @@ require (
 	github.com/lann/ps v0.0.0-20150810152359-62de8c46ede0 // indirect
 	github.com/liamg/iamgo v0.0.6 // indirect
 	github.com/liamg/jfather v0.0.7 // indirect
-	github.com/lib/pq v1.10.4 // indirect
+	github.com/lib/pq v1.10.7 // indirect
 	github.com/liggitt/tabwriter v0.0.0-20181228230101-89fcab3d43de // indirect
 	github.com/mailru/easyjson v0.7.6 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
@@ -224,8 +224,7 @@ require (
 	github.com/prometheus/common v0.44.0 // indirect
 	github.com/prometheus/procfs v0.11.0 // indirect
 	github.com/rcrowley/go-metrics v0.0.0-20200313005456-10cdbea86bc0 // indirect
-	github.com/rubenv/sql-migrate v1.1.1 // indirect
-	github.com/russross/blackfriday v1.6.0 // indirect
+	github.com/rubenv/sql-migrate v1.2.0 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/sergi/go-diff v1.1.0 // indirect
 	github.com/shopspring/decimal v1.2.0 // indirect
@@ -246,7 +245,7 @@ require (
 	github.com/xeipuuv/gojsonpointer v0.0.0-20190905194746-02993c407bfb // indirect
 	github.com/xeipuuv/gojsonreference v0.0.0-20180127040603-bd5ef7bd5415 // indirect
 	github.com/xeipuuv/gojsonschema v1.2.0 // indirect
-	github.com/xlab/treeprint v0.0.0-20181112141820-a009c3971eca // indirect
+	github.com/xlab/treeprint v1.1.0 // indirect
 	github.com/xrash/smetrics v0.0.0-20201216005158-039620a65673 // indirect
 	github.com/yashtewari/glob-intersection v0.1.0 // indirect
 	github.com/yuin/gopher-lua v0.0.0-20210529063254-f4c35e4016d9 // indirect
@@ -274,23 +273,23 @@ require (
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
-	helm.sh/helm/v3 v3.9.0 // indirect
+	helm.sh/helm/v3 v3.11.1 // indirect
 	k8s.io/api v0.26.3 // indirect
-	k8s.io/apiextensions-apiserver v0.24.0 // indirect
+	k8s.io/apiextensions-apiserver v0.26.0 // indirect
 	k8s.io/apimachinery v0.26.3 // indirect
 	k8s.io/apiserver v0.26.2 // indirect
-	k8s.io/cli-runtime v0.24.0 // indirect
+	k8s.io/cli-runtime v0.26.0 // indirect
 	k8s.io/client-go v0.26.3 // indirect
 	k8s.io/component-base v0.26.2 // indirect
 	k8s.io/klog/v2 v2.90.1 // indirect
 	k8s.io/kube-openapi v0.0.0-20221012153701-172d655c2280 // indirect
-	k8s.io/kubectl v0.24.0 // indirect
+	k8s.io/kubectl v0.26.0 // indirect
 	k8s.io/utils v0.0.0-20230220204549-a5ecb0141aa5 // indirect
 	lukechampine.com/blake3 v1.1.7 // indirect
-	oras.land/oras-go v1.2.0 // indirect
+	oras.land/oras-go v1.2.2 // indirect
 	sigs.k8s.io/json v0.0.0-20220713155537-f223a00ba0e2 // indirect
-	sigs.k8s.io/kustomize/api v0.11.4 // indirect
-	sigs.k8s.io/kustomize/kyaml v0.13.6 // indirect
+	sigs.k8s.io/kustomize/api v0.12.1 // indirect
+	sigs.k8s.io/kustomize/kyaml v0.13.9 // indirect
 	sigs.k8s.io/structured-merge-diff/v4 v4.2.3 // indirect
 	sigs.k8s.io/yaml v1.3.0 // indirect
 )
