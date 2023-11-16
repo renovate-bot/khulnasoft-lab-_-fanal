@@ -6,6 +6,7 @@ import (
 
 	"github.com/khulnasoft-lab/fanal/analyzer"
 	misconf "github.com/khulnasoft-lab/fanal/analyzer/config"
+	"github.com/khulnasoft-lab/fanal/analyzer/licensing"
 	"github.com/khulnasoft-lab/fanal/analyzer/secret"
 	"github.com/khulnasoft-lab/fanal/types"
 )
@@ -22,6 +23,7 @@ type Option struct {
 
 	MisconfScannerOption misconf.ScannerOption
 	SecretScannerOption  secret.ScannerOption
+	LicenseScannerOption licensing.ScannerOption
 }
 
 func (o *Option) Sort() {

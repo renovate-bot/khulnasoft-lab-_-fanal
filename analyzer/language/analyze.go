@@ -3,10 +3,10 @@ package language
 import (
 	"golang.org/x/xerrors"
 
+	dio "github.com/aquasecurity/go-dep-parser/pkg/io"
+	godeptypes "github.com/aquasecurity/go-dep-parser/pkg/types"
 	"github.com/khulnasoft-lab/fanal/analyzer"
 	"github.com/khulnasoft-lab/fanal/types"
-	dio "github.com/khulnasoft-lab/go-dep-parser/pkg/io"
-	godeptypes "github.com/khulnasoft-lab/go-dep-parser/pkg/types"
 )
 
 func Analyze(fileType, filePath string, r dio.ReadSeekerAt, parser godeptypes.Parser) (*analyzer.AnalysisResult, error) {

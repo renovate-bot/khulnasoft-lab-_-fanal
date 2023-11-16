@@ -11,11 +11,11 @@ import (
 
 	"golang.org/x/xerrors"
 
+	dio "github.com/aquasecurity/go-dep-parser/pkg/io"
+	"github.com/aquasecurity/go-dep-parser/pkg/python/packaging"
 	"github.com/khulnasoft-lab/fanal/analyzer"
 	"github.com/khulnasoft-lab/fanal/analyzer/language"
 	"github.com/khulnasoft-lab/fanal/types"
-	dio "github.com/khulnasoft-lab/go-dep-parser/pkg/io"
-	"github.com/khulnasoft-lab/go-dep-parser/pkg/python/packaging"
 )
 
 func init() {

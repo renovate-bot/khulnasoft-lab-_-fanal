@@ -7,11 +7,11 @@ import (
 
 	"golang.org/x/xerrors"
 
+	"github.com/aquasecurity/go-dep-parser/pkg/python/pipenv"
 	"github.com/khulnasoft-lab/fanal/analyzer"
 	"github.com/khulnasoft-lab/fanal/analyzer/language"
 	"github.com/khulnasoft-lab/fanal/types"
 	"github.com/khulnasoft-lab/fanal/utils"
-	"github.com/khulnasoft-lab/go-dep-parser/pkg/python/pipenv"
 )
 
 func init() {

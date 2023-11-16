@@ -10,19 +10,20 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/khulnasoft-lab/fanal/log"
 	"github.com/liamg/memoryfs"
 	"github.com/samber/lo"
 	"golang.org/x/xerrors"
 
-	"github.com/khulnasoft/defsec/pkg/detection"
-	"github.com/khulnasoft/defsec/pkg/scan"
-	"github.com/khulnasoft/defsec/pkg/scanners"
-	cfscanner "github.com/khulnasoft/defsec/pkg/scanners/cloudformation"
-	dfscanner "github.com/khulnasoft/defsec/pkg/scanners/dockerfile"
-	"github.com/khulnasoft/defsec/pkg/scanners/helm"
-	k8sscanner "github.com/khulnasoft/defsec/pkg/scanners/kubernetes"
-	"github.com/khulnasoft/defsec/pkg/scanners/options"
-	tfscanner "github.com/khulnasoft/defsec/pkg/scanners/terraform"
+	"github.com/aquasecurity/defsec/pkg/detection"
+	"github.com/aquasecurity/defsec/pkg/scan"
+	"github.com/aquasecurity/defsec/pkg/scanners"
+	cfscanner "github.com/aquasecurity/defsec/pkg/scanners/cloudformation"
+	dfscanner "github.com/aquasecurity/defsec/pkg/scanners/dockerfile"
+	"github.com/aquasecurity/defsec/pkg/scanners/helm"
+	k8sscanner "github.com/aquasecurity/defsec/pkg/scanners/kubernetes"
+	"github.com/aquasecurity/defsec/pkg/scanners/options"
+	tfscanner "github.com/aquasecurity/defsec/pkg/scanners/terraform"
 	"github.com/khulnasoft-lab/fanal/analyzer"
 	"github.com/khulnasoft-lab/fanal/artifact"
 	"github.com/khulnasoft-lab/fanal/handler"
@@ -180,7 +181,6 @@ func newMisconfPostHandler(artifactOpt artifact.Option) (handler.PostHandler, er
 			types.Dockerfile:     dfscanner.NewScanner(opts...),
 			types.Kubernetes:     k8sscanner.NewScanner(opts...),
 			types.Helm:           helm.New(opts...),
-			types.Rbac:           rbac.NewScanner(opts...),
 		},
 	}, nil
 }
@@ -191,7 +191,6 @@ var enabledDefsecTypes = map[detection.FileType]string{
 	detection.FileTypeDockerfile:     types.Dockerfile,
 	detection.FileTypeKubernetes:     types.Kubernetes,
 	detection.FileTypeHelm:           types.Helm,
-	detection.FileTypeRbac:           types.Rbac,
 }
 
 // Handle detects misconfigurations.
@@ -234,7 +233,9 @@ func (h misconfPostHandler) Handle(ctx context.Context, result *analyzer.Analysi
 	for t, scanner := range h.scanners {
 		results, err := scanner.ScanFS(ctx, mapMemoryFS[t], ".")
 		if err != nil {
-			return xerrors.Errorf("scan config error: %w", err)
+			// don't stop the world, log and continue
+			log.Logger.Debugf("scanner error while running %s %s", scanner.Name(), err)
+			continue
 		}
 
 		misconfs = append(misconfs, resultsToMisconf(t, scanner.Name(), results)...)

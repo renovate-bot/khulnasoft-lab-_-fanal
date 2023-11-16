@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/khulnasoft-lab/testdocker/engine"
+	"github.com/aquasecurity/testdocker/engine"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

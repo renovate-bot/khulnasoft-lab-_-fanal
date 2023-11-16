@@ -9,7 +9,7 @@ import (
 	"regexp"
 	"strings"
 
-	debVersion "github.com/khulnasoft-lab/go-deb-version"
+	debVersion "github.com/knqyf263/go-deb-version"
 	"golang.org/x/xerrors"
 
 	"github.com/khulnasoft-lab/fanal/analyzer"

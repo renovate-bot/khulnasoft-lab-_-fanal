@@ -32,7 +32,7 @@ func Test_gomodAnalyzer_Analyze(t *testing.T) {
 						FilePath: "testdata/go.mod",
 						Libraries: []types.Package{
 							{
-								Name:    "github.com/khulnasoft-lab/go-dep-parser",
+								Name:    "github.com/aquasecurity/go-dep-parser",
 								Version: "0.0.0-20220406074731-71021a481237",
 							},
 							{

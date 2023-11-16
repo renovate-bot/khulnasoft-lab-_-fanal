@@ -34,7 +34,9 @@ const (
 	Kubernetes     = "kubernetes"
 	Ansible        = "ansible"
 	Helm           = "helm"
-	Rbac           = "rbac"
+
+	// Licensing
+	License = "license"
 
 	// Language-specific file names
 	NuGetPkgsLock   = "packages.lock.json"
@@ -46,6 +48,7 @@ const (
 	MavenPom = "pom.xml"
 
 	NpmPkgLock = "package-lock.json"
+	NpmPkg     = "package.json"
 	YarnLock   = "yarn.lock"
 
 	ComposerLock = "composer.lock"

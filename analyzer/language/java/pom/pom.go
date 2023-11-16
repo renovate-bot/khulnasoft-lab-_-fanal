@@ -7,7 +7,7 @@ import (
 
 	"golang.org/x/xerrors"
 
-	"github.com/khulnasoft-lab/go-dep-parser/pkg/java/pom"
+	"github.com/aquasecurity/go-dep-parser/pkg/java/pom"
 
 	"github.com/khulnasoft-lab/fanal/analyzer"
 	"github.com/khulnasoft-lab/fanal/analyzer/language"

@@ -13,11 +13,11 @@ import (
 	"testing"
 	"time"
 
-	dtypes "github.com/docker/docker/api/types"
-	"github.com/docker/docker/client"
 	_ "github.com/khulnasoft-lab/fanal/analyzer/all"
 	"github.com/khulnasoft-lab/fanal/cache"
 	"github.com/khulnasoft-lab/fanal/types"
+	dtypes "github.com/docker/docker/api/types"
+	"github.com/docker/docker/client"
 	"github.com/stretchr/testify/require"
 )
 
@@ -30,12 +30,12 @@ type testCase struct {
 var testCases = []testCase{
 	{
 		name:      "happy path alpine:3.10",
-		imageName: "ghcr.io/khulnasoft/vul-test-images:alpine-310",
+		imageName: "ghcr.io/aquasecurity/trivy-test-images:alpine-310",
 		imageFile: "testdata/fixtures/alpine-310.tar.gz",
 	},
 	{
 		name:      "happy path vulnimage with lock files",
-		imageName: "ghcr.io/khulnasoft/vul-vulimages:vulnimage",
+		imageName: "ghcr.io/aquasecurity/trivy-test-images:vulnimage",
 		imageFile: "testdata/fixtures/vulnimage.tar.gz",
 	},
 }

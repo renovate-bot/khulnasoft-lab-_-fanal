@@ -12,10 +12,10 @@ import (
 	"golang.org/x/exp/slices"
 	"golang.org/x/xerrors"
 
+	dio "github.com/aquasecurity/go-dep-parser/pkg/io"
 	"github.com/khulnasoft-lab/fanal/analyzer"
 	"github.com/khulnasoft-lab/fanal/secret"
 	"github.com/khulnasoft-lab/fanal/types"
-	dio "github.com/khulnasoft-lab/go-dep-parser/pkg/io"
 )
 
 const version = 1

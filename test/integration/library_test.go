@@ -15,8 +15,6 @@ import (
 	"strings"
 	"testing"
 
-	dtypes "github.com/docker/docker/api/types"
-	"github.com/docker/docker/client"
 	_ "github.com/khulnasoft-lab/fanal/analyzer/all"
 	"github.com/khulnasoft-lab/fanal/applier"
 	"github.com/khulnasoft-lab/fanal/artifact"
@@ -25,6 +23,8 @@ import (
 	_ "github.com/khulnasoft-lab/fanal/handler/all"
 	"github.com/khulnasoft-lab/fanal/image"
 	"github.com/khulnasoft-lab/fanal/types"
+	dtypes "github.com/docker/docker/api/types"
+	"github.com/docker/docker/client"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -43,56 +43,56 @@ type testCase struct {
 var testCases = []testCase{
 	{
 		name:            "happy path, alpine:3.10",
-		remoteImageName: "ghcr.io/khulnasoft/vul-test-images:alpine-310",
+		remoteImageName: "ghcr.io/aquasecurity/trivy-test-images:alpine-310",
 		imageFile:       "testdata/fixtures/alpine-310.tar.gz",
 		wantOS:          types.OS{Name: "3.10.2", Family: "alpine"},
 	},
 	{
 		name:            "happy path, amazonlinux:2",
-		remoteImageName: "ghcr.io/khulnasoft/vul-vulimages:amazon-2",
+		remoteImageName: "ghcr.io/aquasecurity/trivy-test-images:amazon-2",
 		imageFile:       "testdata/fixtures/amazon-2.tar.gz",
 		wantOS:          types.OS{Name: "2 (Karoo)", Family: "amazon"},
 	},
 	{
 		name:            "happy path, debian:buster",
-		remoteImageName: "ghcr.io/khulnasoft/vul-vulimages:debian-buster",
+		remoteImageName: "ghcr.io/aquasecurity/trivy-test-images:debian-buster",
 		imageFile:       "testdata/fixtures/debian-buster.tar.gz",
 		wantOS:          types.OS{Name: "10.1", Family: "debian"},
 	},
 	{
 		name:            "happy path, photon:3.0",
-		remoteImageName: "ghcr.io/khulnasoft/vul-vulimages:photon-30",
+		remoteImageName: "ghcr.io/aquasecurity/trivy-test-images:photon-30",
 		imageFile:       "testdata/fixtures/photon-30.tar.gz",
 		wantOS:          types.OS{Name: "3.0", Family: "photon"},
 	},
 	{
 		name:            "happy path, registry.redhat.io/ubi7",
-		remoteImageName: "ghcr.io/khulnasoft/vul-vulimages:ubi-7",
+		remoteImageName: "ghcr.io/aquasecurity/trivy-test-images:ubi-7",
 		imageFile:       "testdata/fixtures/ubi-7.tar.gz",
 		wantOS:          types.OS{Name: "7.7", Family: "redhat"},
 	},
 	{
 		name:            "happy path, opensuse leap 15.1",
-		remoteImageName: "ghcr.io/khulnasoft/vul-vulimages:opensuse-leap-151",
+		remoteImageName: "ghcr.io/aquasecurity/trivy-test-images:opensuse-leap-151",
 		imageFile:       "testdata/fixtures/opensuse-leap-151.tar.gz",
 		wantOS:          types.OS{Name: "15.1", Family: "opensuse.leap"},
 	},
 	{
 		// from registry.suse.com/suse/sle15:15.3.17.8.16
 		name:            "happy path, suse 15.3 (NDB)",
-		remoteImageName: "ghcr.io/khulnasoft/vul-vulimages:suse-15.3_ndb",
+		remoteImageName: "ghcr.io/aquasecurity/trivy-test-images:suse-15.3_ndb",
 		imageFile:       "testdata/fixtures/suse-15.3_ndb.tar.gz",
 		wantOS:          types.OS{Name: "15.3", Family: "suse linux enterprise server"},
 	},
 	{
 		name:            "happy path, Fedora 35",
-		remoteImageName: "ghcr.io/khulnasoft/vul-vulimages:fedora-35",
+		remoteImageName: "ghcr.io/aquasecurity/trivy-test-images:fedora-35",
 		imageFile:       "testdata/fixtures/fedora-35.tar.gz",
 		wantOS:          types.OS{Name: "35", Family: "fedora"},
 	},
 	{
 		name:                "happy path, vulnimage with lock files",
-		remoteImageName:     "ghcr.io/khulnasoft/vul-vulimages:vulnimage",
+		remoteImageName:     "ghcr.io/aquasecurity/trivy-test-images:vulnimage",
 		imageFile:           "testdata/fixtures/vulnimage.tar.gz",
 		wantOS:              types.OS{Name: "3.7.1", Family: "alpine"},
 		wantApplicationFile: "testdata/goldens/vuln-image1.2.3.expectedlibs.golden",

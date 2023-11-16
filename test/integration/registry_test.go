@@ -89,7 +89,7 @@ func TestTLSRegistry(t *testing.T) {
 	}{
 		{
 			name:      "happy path",
-			imageName: "ghcr.io/khulnasoft/vul-test-images:alpine-310",
+			imageName: "ghcr.io/aquasecurity/trivy-test-images:alpine-310",
 			imageFile: "testdata/fixtures/alpine-310.tar.gz",
 			option: types.DockerOption{
 				UserName:              registryUsername,
@@ -102,7 +102,7 @@ func TestTLSRegistry(t *testing.T) {
 		},
 		{
 			name:      "happy path with docker login",
-			imageName: "ghcr.io/khulnasoft/vul-vulimages:alpine-310",
+			imageName: "ghcr.io/aquasecurity/trivy-test-images:alpine-310",
 			imageFile: "testdata/fixtures/alpine-310.tar.gz",
 			option: types.DockerOption{
 				InsecureSkipTLSVerify: true,
@@ -114,7 +114,7 @@ func TestTLSRegistry(t *testing.T) {
 		},
 		{
 			name:      "sad path: tls verify",
-			imageName: "ghcr.io/khulnasoft/vul-vulimages:alpine-310",
+			imageName: "ghcr.io/aquasecurity/trivy-test-images:alpine-310",
 			imageFile: "testdata/fixtures/alpine-310.tar.gz",
 			option: types.DockerOption{
 				UserName: registryUsername,
@@ -124,7 +124,7 @@ func TestTLSRegistry(t *testing.T) {
 		},
 		{
 			name:      "sad path: no credential",
-			imageName: "ghcr.io/khulnasoft/vul-vulimages:alpine-310",
+			imageName: "ghcr.io/aquasecurity/trivy-test-images:alpine-310",
 			imageFile: "testdata/fixtures/alpine-310.tar.gz",
 			option: types.DockerOption{
 				InsecureSkipTLSVerify: true,

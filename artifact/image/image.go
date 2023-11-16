@@ -10,6 +10,7 @@ import (
 	"sync"
 
 	v1 "github.com/google/go-containerregistry/pkg/v1"
+	"github.com/khulnasoft-lab/fanal/analyzer/licensing"
 	"golang.org/x/exp/slices"
 	"golang.org/x/sync/semaphore"
 	"golang.org/x/xerrors"
@@ -55,6 +56,11 @@ func NewArtifact(img types.Image, c cache.ArtifactCache, opt artifact.Option) (a
 	// Register secret analyzer
 	if err = secret.RegisterSecretAnalyzer(opt.SecretScannerOption); err != nil {
 		return nil, xerrors.Errorf("secret scanner error: %w", err)
+	}
+
+	// Register license analyzer
+	if err = licensing.RegisterLicenseScanner(opt.LicenseScannerOption); err != nil {
+		return nil, xerrors.Errorf("license scanner error: %w", err)
 	}
 
 	return Artifact{
@@ -245,6 +251,7 @@ func (a Artifact) inspectLayer(ctx context.Context, diffID string, disabled []an
 		PackageInfos:    result.PackageInfos,
 		Applications:    result.Applications,
 		Secrets:         result.Secrets,
+		Licenses:        result.Licenses,
 		OpaqueDirs:      opqDirs,
 		WhiteoutFiles:   whFiles,
 		CustomResources: result.CustomResources,
@@ -328,29 +335,32 @@ func (a Artifact) inspectConfig(imageID string, osFound types.OS) error {
 // Guess layers in base image (call base layers).
 //
 // e.g. In the following example, we should detect layers in debian:8.
-//   FROM debian:8
-//   RUN apt-get update
-//   COPY mysecret /
-//   ENTRYPOINT ["entrypoint.sh"]
-//   CMD ["somecmd"]
+//
+//	FROM debian:8
+//	RUN apt-get update
+//	COPY mysecret /
+//	ENTRYPOINT ["entrypoint.sh"]
+//	CMD ["somecmd"]
 //
 // debian:8 may be like
-//   ADD file:5d673d25da3a14ce1f6cf66e4c7fd4f4b85a3759a9d93efb3fd9ff852b5b56e4 in /
-//   CMD ["/bin/sh"]
+//
+//	ADD file:5d673d25da3a14ce1f6cf66e4c7fd4f4b85a3759a9d93efb3fd9ff852b5b56e4 in /
+//	CMD ["/bin/sh"]
 //
 // In total, it would be like:
-//   ADD file:5d673d25da3a14ce1f6cf66e4c7fd4f4b85a3759a9d93efb3fd9ff852b5b56e4 in /
-//   CMD ["/bin/sh"]              # empty layer (detected)
-//   RUN apt-get update
-//   COPY mysecret /
-//   ENTRYPOINT ["entrypoint.sh"] # empty layer (skipped)
-//   CMD ["somecmd"]              # empty layer (skipped)
+//
+//	ADD file:5d673d25da3a14ce1f6cf66e4c7fd4f4b85a3759a9d93efb3fd9ff852b5b56e4 in /
+//	CMD ["/bin/sh"]              # empty layer (detected)
+//	RUN apt-get update
+//	COPY mysecret /
+//	ENTRYPOINT ["entrypoint.sh"] # empty layer (skipped)
+//	CMD ["somecmd"]              # empty layer (skipped)
 //
 // This method tries to detect CMD in the second line and assume the first line is a base layer.
-//   1. Iterate histories from the bottom.
-//   2. Skip all the empty layers at the bottom. In the above example, "entrypoint.sh" and "somecmd" will be skipped
-//   3. If it finds CMD, it assumes that it is the end of base layers.
-//   4. It gets all the layers as base layers above the CMD found in #3.
+//  1. Iterate histories from the bottom.
+//  2. Skip all the empty layers at the bottom. In the above example, "entrypoint.sh" and "somecmd" will be skipped
+//  3. If it finds CMD, it assumes that it is the end of base layers.
+//  4. It gets all the layers as base layers above the CMD found in #3.
 func (a Artifact) guessBaseLayers(diffIDs []string, configFile *v1.ConfigFile) []string {
 	if configFile == nil {
 		return nil

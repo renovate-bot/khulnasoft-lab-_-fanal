@@ -9,10 +9,10 @@ import (
 	"golang.org/x/exp/slices"
 	"golang.org/x/xerrors"
 
+	ver "github.com/aquasecurity/go-version/pkg/version"
 	"github.com/khulnasoft-lab/fanal/analyzer"
 	aos "github.com/khulnasoft-lab/fanal/analyzer/os"
 	"github.com/khulnasoft-lab/fanal/types"
-	ver "github.com/khulnasoft-lab/goversion/pkg/version"
 )
 
 func init() {
