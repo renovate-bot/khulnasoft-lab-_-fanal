@@ -15,7 +15,7 @@ func TestIsGzip(t *testing.T) {
 		{"testdata/test.tar.gz", true},
 		{"testdata/test.txt", false},
 		{"testdata/test.txt.zst", false},
-		{"testdata/khulnasoft.png", false},
+		{"testdata/aqua.png", false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.in, func(t *testing.T) {

@@ -1,5 +1,3 @@
-> **This project has been moved into [github.com/khulnasoft/vul](https://github.com/khulnasoft/vul) - all packages or their equivalents can be found there instead**
-
 # fanal
 Static Analysis Library for Containers
 

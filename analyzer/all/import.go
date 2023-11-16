@@ -19,6 +19,7 @@ import (
 	_ "github.com/khulnasoft-lab/fanal/analyzer/language/ruby/bundler"
 	_ "github.com/khulnasoft-lab/fanal/analyzer/language/ruby/gemspec"
 	_ "github.com/khulnasoft-lab/fanal/analyzer/language/rust/cargo"
+	_ "github.com/khulnasoft-lab/fanal/analyzer/licensing"
 	_ "github.com/khulnasoft-lab/fanal/analyzer/os/alpine"
 	_ "github.com/khulnasoft-lab/fanal/analyzer/os/amazonlinux"
 	_ "github.com/khulnasoft-lab/fanal/analyzer/os/debian"

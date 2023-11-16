@@ -6,9 +6,9 @@ import (
 	"os"
 	"strings"
 
+	"github.com/aquasecurity/go-dep-parser/pkg/io"
 	"github.com/khulnasoft-lab/fanal/analyzer"
 	"github.com/khulnasoft-lab/fanal/types"
-	"github.com/khulnasoft-lab/go-dep-parser/pkg/io"
 	"golang.org/x/exp/slices"
 	"golang.org/x/xerrors"
 )

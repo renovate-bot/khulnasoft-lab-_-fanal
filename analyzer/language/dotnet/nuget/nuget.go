@@ -9,11 +9,11 @@ import (
 
 	"golang.org/x/xerrors"
 
+	"github.com/aquasecurity/go-dep-parser/pkg/nuget/config"
+	"github.com/aquasecurity/go-dep-parser/pkg/nuget/lock"
 	"github.com/khulnasoft-lab/fanal/analyzer"
 	"github.com/khulnasoft-lab/fanal/analyzer/language"
 	"github.com/khulnasoft-lab/fanal/types"
-	"github.com/khulnasoft-lab/go-dep-parser/pkg/nuget/config"
-	"github.com/khulnasoft-lab/go-dep-parser/pkg/nuget/lock"
 )
 
 func init() {

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TEST_IMAGE=ghcr.io/khulnasoft/vul-test-images
+TEST_IMAGE=ghcr.io/aquasecurity/trivy-test-images
 
 CURRENT=$(cd $(dirname $0);pwd)
 

@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/khulnasoft-lab/fanal/types"
 	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/aws/aws-sdk-go/service/s3/s3iface"
 	"github.com/aws/aws-sdk-go/service/s3/s3manager"
+	"github.com/khulnasoft-lab/fanal/types"
 	"golang.org/x/xerrors"
 )
 

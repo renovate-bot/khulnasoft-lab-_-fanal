@@ -12,7 +12,7 @@ import (
 
 	"golang.org/x/xerrors"
 
-	dio "github.com/khulnasoft-lab/go-dep-parser/pkg/io"
+	dio "github.com/aquasecurity/go-dep-parser/pkg/io"
 )
 
 const (

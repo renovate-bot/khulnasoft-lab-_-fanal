@@ -6,10 +6,10 @@ import (
 	"path/filepath"
 	"regexp"
 
+	"github.com/aquasecurity/go-dep-parser/pkg/ruby/gemspec"
 	"github.com/khulnasoft-lab/fanal/analyzer"
 	"github.com/khulnasoft-lab/fanal/analyzer/language"
 	"github.com/khulnasoft-lab/fanal/types"
-	"github.com/khulnasoft-lab/go-dep-parser/pkg/ruby/gemspec"
 	"golang.org/x/xerrors"
 )
 

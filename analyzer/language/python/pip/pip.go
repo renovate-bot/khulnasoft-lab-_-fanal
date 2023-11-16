@@ -5,10 +5,10 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/aquasecurity/go-dep-parser/pkg/python/pip"
 	"github.com/khulnasoft-lab/fanal/analyzer"
 	"github.com/khulnasoft-lab/fanal/analyzer/language"
 	"github.com/khulnasoft-lab/fanal/types"
-	"github.com/khulnasoft-lab/go-dep-parser/pkg/python/pip"
 	"golang.org/x/xerrors"
 )
 

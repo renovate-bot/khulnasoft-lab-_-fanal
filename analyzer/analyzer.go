@@ -13,10 +13,10 @@ import (
 	"golang.org/x/sync/semaphore"
 	"golang.org/x/xerrors"
 
+	dio "github.com/aquasecurity/go-dep-parser/pkg/io"
 	aos "github.com/khulnasoft-lab/fanal/analyzer/os"
 	"github.com/khulnasoft-lab/fanal/log"
 	"github.com/khulnasoft-lab/fanal/types"
-	dio "github.com/khulnasoft-lab/go-dep-parser/pkg/io"
 )
 
 var (
@@ -66,18 +66,8 @@ func RegisterAnalyzer(analyzer analyzer) {
 	analyzers[analyzer.Type()] = analyzer
 }
 
-// DeregisterAnalyzer is mainly for testing
-func DeregisterAnalyzer(t Type) {
-	delete(analyzers, t)
-}
-
 func RegisterConfigAnalyzer(analyzer configAnalyzer) {
 	configAnalyzers[analyzer.Type()] = analyzer
-}
-
-// DeregisterConfigAnalyzer is mainly for testing
-func DeregisterConfigAnalyzer(t Type) {
-	delete(configAnalyzers, t)
 }
 
 // CustomGroup returns a group name for custom analyzers
@@ -100,6 +90,7 @@ type AnalysisResult struct {
 	PackageInfos         []types.PackageInfo
 	Applications         []types.Application
 	Secrets              []types.Secret
+	Licenses             []types.LicenseFile
 	SystemInstalledFiles []string // A list of files installed by OS package manager
 
 	Files map[types.HandlerType][]types.File
@@ -120,7 +111,8 @@ func NewAnalysisResult() *AnalysisResult {
 
 func (r *AnalysisResult) isEmpty() bool {
 	return r.OS == nil && r.Repository == nil && len(r.PackageInfos) == 0 && len(r.Applications) == 0 &&
-		len(r.Secrets) == 0 && len(r.SystemInstalledFiles) == 0 && r.BuildInfo == nil && len(r.Files) == 0 && len(r.CustomResources) == 0
+		len(r.Secrets) == 0 && len(r.SystemInstalledFiles) == 0 && r.BuildInfo == nil && len(r.Files) == 0 &&
+		len(r.CustomResources) == 0 && len(r.Licenses) == 0
 }
 
 func (r *AnalysisResult) Sort() {
@@ -206,6 +198,7 @@ func (r *AnalysisResult) Merge(new *AnalysisResult) {
 	}
 
 	r.Secrets = append(r.Secrets, new.Secrets...)
+	r.Licenses = append(r.Licenses, new.Licenses...)
 	r.SystemInstalledFiles = append(r.SystemInstalledFiles, new.SystemInstalledFiles...)
 
 	if new.BuildInfo != nil {

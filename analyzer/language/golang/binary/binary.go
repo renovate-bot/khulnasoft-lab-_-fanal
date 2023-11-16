@@ -7,10 +7,10 @@ import (
 
 	"golang.org/x/xerrors"
 
+	"github.com/aquasecurity/go-dep-parser/pkg/golang/binary"
 	"github.com/khulnasoft-lab/fanal/analyzer"
 	"github.com/khulnasoft-lab/fanal/analyzer/language"
 	"github.com/khulnasoft-lab/fanal/types"
-	"github.com/khulnasoft-lab/go-dep-parser/pkg/golang/binary"
 )
 
 func init() {
