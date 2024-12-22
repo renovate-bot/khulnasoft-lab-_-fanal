@@ -1,16 +1,18 @@
 module github.com/khulnasoft-lab/fanal
 
-go 1.18
+go 1.21
+
+toolchain go1.23.4
 
 require (
 	github.com/Azure/azure-sdk-for-go v65.0.0+incompatible
 	github.com/Azure/go-autorest/autorest v0.11.27
 	github.com/Azure/go-autorest/autorest/adal v0.9.18
 	github.com/Azure/go-autorest/autorest/azure/auth v0.5.11
-	github.com/BurntSushi/toml v1.1.0 // indirect
+	github.com/BurntSushi/toml v1.3.2 // indirect
 	github.com/GoogleCloudPlatform/docker-credential-gcr v2.0.5+incompatible
 	github.com/alicebob/miniredis/v2 v2.21.0
-	github.com/aquasecurity/go-dep-parser v0.0.0-20220531123411-1dabb532605f
+	github.com/aquasecurity/go-dep-parser v0.0.0-20240606050805-1de9a375c629
 	github.com/aquasecurity/go-version v0.0.0-20210121072130-637058cfe492
 	github.com/aquasecurity/testdocker v0.0.0-20210911155206-e1e85f5a1516
 	github.com/aws/aws-sdk-go v1.44.25
@@ -34,21 +36,21 @@ require (
 	github.com/open-policy-agent/opa v0.41.0 // indirect
 	github.com/opencontainers/go-digest v1.0.0
 	github.com/opencontainers/image-spec v1.0.3-0.20220303224323-02efb9a75ee1
-	github.com/samber/lo v1.21.0
+	github.com/samber/lo v1.39.0
 	github.com/saracen/walker v0.0.0-20191201085201-324a081bae7e
 	github.com/sosedoff/gitkit v0.3.0
-	github.com/stretchr/testify v1.7.2
+	github.com/stretchr/testify v1.8.4
 	github.com/testcontainers/testcontainers-go v0.13.0
 	github.com/urfave/cli/v2 v2.8.1
 	go.etcd.io/bbolt v1.3.6
-	go.uber.org/zap v1.21.0
-	golang.org/x/crypto v0.0.0-20220513210258-46612604a0f9 // indirect
+	go.uber.org/zap v1.26.0
+	golang.org/x/crypto v0.18.0 // indirect
 	golang.org/x/exp v0.0.0-20220407100705-7b9b53b0aca4
-	golang.org/x/mod v0.6.0-dev.0.20220106191415-9b9b3d81d5e3
-	golang.org/x/net v0.0.0-20220516133312-45b265872317 // indirect
-	golang.org/x/sync v0.0.0-20220513210516-0976fa681c29
-	golang.org/x/sys v0.0.0-20220517195934-5e4e11fc645e // indirect
-	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1
+	golang.org/x/mod v0.15.0
+	golang.org/x/net v0.20.0 // indirect
+	golang.org/x/sync v0.3.0
+	golang.org/x/sys v0.16.0 // indirect
+	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2
 	gopkg.in/yaml.v3 v3.0.1
 )
 
@@ -87,6 +89,7 @@ require (
 	github.com/alicebob/gopher-json v0.0.0-20200520072559-a9ecdc9d1d3a // indirect
 	github.com/apparentlymart/go-cidr v1.1.0 // indirect
 	github.com/apparentlymart/go-textseg/v13 v13.0.0 // indirect
+	github.com/aquasecurity/go-pep440-version v0.0.0-20210121094942-22b2f8951d46 // indirect
 	github.com/asaskevich/govalidator v0.0.0-20200428143746-21a406dcc535 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/bgentry/go-netrc v0.0.0-20140422174119-9fd32a8b3d3d // indirect
@@ -152,7 +155,7 @@ require (
 	github.com/gregjones/httpcache v0.0.0-20180305231024-9cad4c3443a7 // indirect
 	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
 	github.com/hashicorp/go-getter v1.6.1 // indirect
-	github.com/hashicorp/go-retryablehttp v0.7.1 // indirect
+	github.com/hashicorp/go-retryablehttp v0.7.5 // indirect
 	github.com/hashicorp/go-safetemp v1.0.0 // indirect
 	github.com/hashicorp/go-uuid v1.0.3 // indirect
 	github.com/hashicorp/go-version v1.2.0 // indirect
@@ -233,7 +236,7 @@ require (
 	github.com/spf13/cobra v1.4.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/stefanberger/go-pkcs11uri v0.0.0-20201008174630-78d3cae3a980 // indirect
-	github.com/stretchr/objx v0.2.0 // indirect
+	github.com/stretchr/objx v0.5.0 // indirect
 	github.com/syndtr/gocapability v0.0.0-20200815063812-42c35b437635 // indirect
 	github.com/tidwall/gjson v1.14.1 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
@@ -256,12 +259,12 @@ require (
 	go.opencensus.io v0.23.0 // indirect
 	go.starlark.net v0.0.0-20200306205701-8dd3e2ee1dd5 // indirect
 	go.uber.org/atomic v1.7.0 // indirect
-	go.uber.org/multierr v1.7.0 // indirect
+	go.uber.org/multierr v1.10.0 // indirect
 	golang.org/x/oauth2 v0.0.0-20211104180415-d3ed0bb246c8 // indirect
-	golang.org/x/term v0.0.0-20220411215600-e5f449aeb171 // indirect
-	golang.org/x/text v0.3.7 // indirect
+	golang.org/x/term v0.16.0 // indirect
+	golang.org/x/text v0.14.0 // indirect
 	golang.org/x/time v0.0.0-20220210224613-90d013bbcef8 // indirect
-	golang.org/x/tools v0.1.10-0.20220218145154-897bd77cd717 // indirect
+	golang.org/x/tools v0.13.0 // indirect
 	google.golang.org/api v0.62.0 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/genproto v0.0.0-20220426171045-31bebdecfb46 // indirect
