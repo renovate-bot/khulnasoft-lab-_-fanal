@@ -12,7 +12,7 @@ require (
 	github.com/alicebob/miniredis/v2 v2.21.0
 	github.com/aquasecurity/go-dep-parser v0.0.0-20220531123411-1dabb532605f
 	github.com/aquasecurity/go-version v0.0.0-20210121072130-637058cfe492
-	github.com/aquasecurity/testdocker v0.0.0-20210911155206-e1e85f5a1516
+	github.com/aquasecurity/testdocker 35e4cd04890c
 	github.com/aws/aws-sdk-go v1.44.25
 	github.com/containerd/containerd v1.6.4 // replace
 	github.com/containerd/nerdctl v0.20.0
